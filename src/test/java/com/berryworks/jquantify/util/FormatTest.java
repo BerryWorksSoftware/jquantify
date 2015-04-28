@@ -59,8 +59,8 @@ public class FormatTest {
         assertEquals(Long.valueOf(peakConcurrencyAt).longValue(),
                 mSessionCounter.getPeakConcurrencyInterval().getStartTime());
 
-        String sessionTime = fields[10].trim();
-        assertEquals(Long.valueOf(sessionTime).longValue(), mSessionCounter.getSessionTime());
+//        String sessionTime = fields[10].trim();
+//        assertEquals(Long.valueOf(sessionTime).longValue(), mSessionCounter.getSessionTime());
 
         String sessionAvg = fields[11].trim();
         assertEquals(Float.valueOf(sessionAvg).floatValue(), mSessionCounter.getSessionTimeMean(), 0.01);
