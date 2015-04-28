@@ -24,7 +24,7 @@ import com.berryworks.jquantify.*;
 public abstract class Format {
 
     public static String asCSV(EventCounter inEventCounter) {
-        StringBuffer sb = new StringBuffer(1000);
+        StringBuilder sb = new StringBuilder(1000);
         sb.append(metricAsCSV(inEventCounter));
 
         sb.append(", ").append(inEventCounter.getCount());
@@ -32,14 +32,14 @@ public abstract class Format {
         sb.append(", ").append(Format.toDecimalFormat(inEventCounter.getCurrentFreq()));
 
         EventCounterInterval i = inEventCounter.getPeakEventsInterval();
-        sb.append(", " + Format.toDecimalFormat(i.getEventRatePerSecond()));
-        sb.append(", " + i.getStartTime());
+        sb.append(", ").append(Format.toDecimalFormat(i.getEventRatePerSecond()));
+        sb.append(", ").append(i.getStartTime());
 
         return sb.toString();
     }
 
     public static String asCSV(SessionCounter inSessionCounter) {
-        StringBuffer sb = new StringBuffer(1000);
+        StringBuilder sb = new StringBuilder(1000);
         sb.append(asCSV((EventCounter) inSessionCounter));
 
         sb.append(", ").append(inSessionCounter.getConcurrency());
@@ -56,10 +56,7 @@ public abstract class Format {
     }
 
     public static String metricAsCSV(Metric inMetric) {
-        StringBuffer sb = new StringBuffer(1000);
-        sb.append(inMetric.getLabel());
-        sb.append(", ").append(Format.toDecimalFormat(inMetric.getAge()));
-        return sb.toString();
+        return inMetric.getLabel() + ", " + Format.toDecimalFormat(inMetric.getAge());
     }
 
     public static String percent(double inValue, double inBase) {

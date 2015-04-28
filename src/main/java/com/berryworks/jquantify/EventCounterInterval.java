@@ -167,9 +167,7 @@ public class EventCounterInterval implements Interval {
      */
     @Override
     public String toString() {
-        String result =
-                "Interval " + "\nclosed=" + closed + " events=" + events + " priorEvents=" + priorEvents;
-        return result;
+        return "Interval " + "\nclosed=" + closed + " events=" + events + " priorEvents=" + priorEvents;
     }
 
 }

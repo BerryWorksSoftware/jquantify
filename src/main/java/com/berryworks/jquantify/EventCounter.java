@@ -157,7 +157,6 @@ public class EventCounter extends Metric {
     public synchronized void add(int inCount) {
         normalize();
         mCurrentInterval.add(inCount);
-        return;
     }
 
     /**
@@ -244,10 +243,6 @@ public class EventCounter extends Metric {
     }
 
     private boolean isPriorIntervalRelevant() {
-        if (mPriorInterval == null) {
-            return false;
-        } else {
-            return mPriorInterval.getStartTime() != mCurrentInterval.getStartTime();
-        }
+        return (mPriorInterval == null) ? false : mPriorInterval.getStartTime() != mCurrentInterval.getStartTime();
     }
 }

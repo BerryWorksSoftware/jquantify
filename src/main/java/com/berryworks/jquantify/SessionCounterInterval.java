@@ -124,10 +124,8 @@ public class SessionCounterInterval extends EventCounterInterval {
 
     @Override
     public String toString() {
-        String result =
-                super.toString() + "\nstops=" + eventStops + " priorConcurrency=" + priorConcurrency
-                        + " peakConcurrency=" + peakConcurrency;
-        return result;
+        return super.toString() + "\nstops=" + eventStops + " priorConcurrency=" + priorConcurrency
+                + " peakConcurrency=" + peakConcurrency;
     }
 
 }

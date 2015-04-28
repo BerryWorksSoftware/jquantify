@@ -31,7 +31,7 @@ import java.util.Set;
  */
 public final class MetricRepository implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final Map<String, Metric> repository = new HashMap<String, Metric>();
+    private static final Map<String, Metric> repository = new HashMap<>();
     private static final MetricRepository instance = new MetricRepository();
 
     /**

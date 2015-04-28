@@ -104,7 +104,7 @@ public class SessionCounter extends EventCounter {
     public void reset() {
         super.reset();
         cumulativeSessionTime = recentSessionTime = maxSessionTime = 0;
-        startTimes = new LinkedList<Long>();
+        startTimes = new LinkedList<>();
     }
 
     /**
@@ -207,7 +207,7 @@ public class SessionCounter extends EventCounter {
     public synchronized void start() {
         super.add(1);
         checkPeakConcurrency();
-        startTimes.add(Long.valueOf(mNow));
+        startTimes.add(mNow);
     }
 
     private void checkPeakConcurrency() {

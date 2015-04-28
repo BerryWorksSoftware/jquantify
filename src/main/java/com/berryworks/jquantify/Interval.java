@@ -38,21 +38,21 @@ public interface Interval extends Serializable {
      *
      * @return start time of this <code>Interval</code>
      */
-    public long getStartTime();
+    long getStartTime();
 
     /**
      * Gets the duration, in milliseconds, of this <code>Interval</code>
      *
      * @return long - number of seconds
      */
-    public long getDuration();
+    long getDuration();
 
     /**
      * Gets the number of events counted during this interval.
      *
      * @return number of events
      */
-    public long getEvents();
+    long getEvents();
 
     /**
      * Returns the computed event rate per second during this
@@ -63,7 +63,7 @@ public interface Interval extends Serializable {
      *
      * @return events per second
      */
-    public float getEventRatePerSecond();
+    float getEventRatePerSecond();
 
     /**
      * Gets the total number of events, including those that occurred
@@ -71,7 +71,7 @@ public interface Interval extends Serializable {
      *
      * @return number of events
      */
-    public long getCumulativeEvents();
+    long getCumulativeEvents();
 
     /**
      * Returns true if the current time is after the end of this interval.
