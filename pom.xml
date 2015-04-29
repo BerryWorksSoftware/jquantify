@@ -8,6 +8,13 @@
     <artifactId>jquantify</artifactId>
     <version>4.1.3</version>
 
+    <packaging>jar</packaging>
+    <name>JQuantify</name>
+    <description>JQuantify is a Java package providing lightweight statistics describing the frequency and duration of
+        application-specific events.
+    </description>
+    <url>https://github.com/BerryWorksSoftware/jquantify</url>
+
     <scm>
         <developerConnection>scm://github.com/BerryWorksSoftware/jquantify.git</developerConnection>
     </scm>
