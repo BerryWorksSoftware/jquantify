@@ -15,8 +15,25 @@
     </description>
     <url>https://github.com/BerryWorksSoftware/jquantify</url>
 
+    <licenses>
+        <license>
+            <name>GNU General Public License, Version 3</name>
+            <url>http://www.gnu.org/licenses/gpl.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Scott Mayberry</name>
+            <email>info@berryworkssoftware.net</email>
+            <organization>BerryWorks Software LLC</organization>
+        </developer>
+    </developers>
+
     <scm>
-        <developerConnection>scm:git:git@github.com/BerryWorksSoftware/jquantify.git</developerConnection>
+        <connection>scm:git:git@github.com:BerryWorksSoftware/jquantify.git</connection>
+        <developerConnection>scm:git:git@github.com:BerryWorksSoftware/jquantify.git</developerConnection>
+        <url>git@github.com:BerryWorksSoftware/jquantify.git</url>
     </scm>
 
 </project>
