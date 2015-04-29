@@ -16,7 +16,9 @@
     <url>https://github.com/BerryWorksSoftware/jquantify</url>
 
     <scm>
+        <connection>scm://github.com/BerryWorksSoftware/jquantify.git</connection>
         <developerConnection>scm://github.com/BerryWorksSoftware/jquantify.git</developerConnection>
+        <url>git@github.com/BerryWorksSoftware/jquantify.git</url>
     </scm>
 
     <properties>
@@ -123,10 +125,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <reporting>
-        <plugins>
-        </plugins>
-    </reporting>
 
 </project>
