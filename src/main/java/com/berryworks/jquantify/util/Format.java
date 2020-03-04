@@ -75,27 +75,26 @@ public abstract class Format {
     }
 
     public static String asHtmlTable(Metric... metrics) {
-        StringBuffer sb = new StringBuffer("<table>\n");
+        StringBuffer sb = new StringBuffer("<table>" + NEWLINE);
         sb.append("" +
-                "    <col>\n" +
-                "    <colgroup span=\"2\"></colgroup>\n" +
-                "    <colgroup span=\"2\"></colgroup>\n" +
-                "    <tr>\n" +
-                "        <td rowspan=\"2\"></td>\n" +
-                "        <th colspan=\"2\" scope=\"colgroup\">Occurrence</th>\n" +
-                "        <th colspan=\"3\" scope=\"colgroup\">Duration</th>\n" +
-                "        <th colspan=\"3\" scope=\"colgroup\">Concurrency</th>\n" +
-                "    </tr>\n" +
-                "    <tr>\n" +
-                "        <th scope=\"col\">Count</th>\n" +
-                "        <th scope=\"col\">Frequency</th>\n" +
-                "        <th scope=\"col\">Recent</th>\n" +
-                "        <th scope=\"col\">Mean</th>\n" +
-                "        <th scope=\"col\">Peak</th>\n" +
-                "        <th scope=\"col\">Recent</th>\n" +
-                "        <th scope=\"col\">Mean</th>\n" +
-                "        <th scope=\"col\">Peak</th>\n" +
-                "    </tr>\n");
+                "    <col>" + NEWLINE +
+                "    <colgroup span=\"2\"></colgroup>" + NEWLINE +
+                "    <colgroup span=\"2\"></colgroup>" + NEWLINE +
+                "    <tr>" + NEWLINE +
+                "        <td rowspan=\"2\"></td>" + NEWLINE +
+                "        <th colspan=\"2\" scope=\"colgroup\">Occurrence</th>" + NEWLINE +
+                "        <th colspan=\"3\" scope=\"colgroup\">Duration</th>" + NEWLINE +
+                "        <th colspan=\"2\" scope=\"colgroup\">Concurrency</th>" + NEWLINE +
+                "    </tr>" + NEWLINE +
+                "    <tr>" + NEWLINE +
+                "        <th scope=\"col\">Count</th>" + NEWLINE +
+                "        <th scope=\"col\">Frequency</th>" + NEWLINE +
+                "        <th scope=\"col\">Recent</th>" + NEWLINE +
+                "        <th scope=\"col\">Mean</th>" + NEWLINE +
+                "        <th scope=\"col\">Peak</th>" + NEWLINE +
+                "        <th scope=\"col\">Recent</th>" + NEWLINE +
+                "        <th scope=\"col\">Peak</th>" + NEWLINE +
+                "    </tr>" + NEWLINE);
         for (Metric m : metrics) {
             if (m instanceof SessionCounter) {
                 SessionCounter s = (SessionCounter) m;
@@ -107,12 +106,11 @@ public abstract class Format {
                 sb.append("        <td>").append(s.getSessionTimeMean()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getConcurrency()).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(s.getCount()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getPeakConcurrencyInterval().getConcurrency()).append("</td>").append(NEWLINE);
                 sb.append("    </tr>").append(NEWLINE);
             }
         }
-        sb.append("</table>\n");
+        sb.append("</table>" + NEWLINE);
         return sb.toString();
     }
 }

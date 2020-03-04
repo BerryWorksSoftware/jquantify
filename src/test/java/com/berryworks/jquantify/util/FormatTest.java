@@ -188,7 +188,7 @@ public class FormatTest {
                 "        <td rowspan=\"2\"></td>\n" +
                 "        <th colspan=\"2\" scope=\"colgroup\">Occurrence</th>\n" +
                 "        <th colspan=\"3\" scope=\"colgroup\">Duration</th>\n" +
-                "        <th colspan=\"3\" scope=\"colgroup\">Concurrency</th>\n" +
+                "        <th colspan=\"2\" scope=\"colgroup\">Concurrency</th>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
                 "        <th scope=\"col\">Count</th>\n" +
@@ -197,7 +197,6 @@ public class FormatTest {
                 "        <th scope=\"col\">Mean</th>\n" +
                 "        <th scope=\"col\">Peak</th>\n" +
                 "        <th scope=\"col\">Recent</th>\n" +
-                "        <th scope=\"col\">Mean</th>\n" +
                 "        <th scope=\"col\">Peak</th>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
@@ -209,7 +208,6 @@ public class FormatTest {
                 "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
-                "        <td>0</td>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
                 "        <th scope=\"row\">B</th>\n" +
@@ -217,7 +215,6 @@ public class FormatTest {
                 "        <td>0.0</td>\n" +
                 "        <td>0</td>\n" +
                 "        <td>0.0</td>\n" +
-                "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
