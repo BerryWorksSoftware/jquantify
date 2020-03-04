@@ -21,6 +21,10 @@ package com.berryworks.jquantify.util;
 
 import com.berryworks.jquantify.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public abstract class Format {
 
     public static final String NEWLINE = System.lineSeparator();
@@ -112,5 +116,11 @@ public abstract class Format {
         }
         sb.append("</table>" + NEWLINE);
         return sb.toString();
+    }
+
+    public static String asHtmlTable() {
+        List<String> names = new ArrayList<>(MetricRepository.instance().getLabels());
+        Collections.sort(names);
+        return asHtmlTable(names.toArray(new Metric[0]));
     }
 }
