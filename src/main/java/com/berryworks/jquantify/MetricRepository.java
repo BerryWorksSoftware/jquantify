@@ -62,7 +62,7 @@ public final class MetricRepository implements Serializable {
      * Gets a <code>Metric</code> with a specified label.
      *
      * @param inLabel String label
-     * @return <code>Metric</code> with the specified label, or <code>null</code
+     * @return <code>Metric</code> with the specified label, or <code>null</code>
      *         if one does not exist.
      */
     public Metric getMetric(String inLabel) {
@@ -71,7 +71,7 @@ public final class MetricRepository implements Serializable {
 
     /**
      * Places an instance of <code>Metric</code> into the repository.
-     * <p/>
+     * <p>
      * If the repository already contains a <code>Metric</code> with the same
      * label, it is replaced with the specified one.
      *
@@ -83,12 +83,12 @@ public final class MetricRepository implements Serializable {
 
     /**
      * Gets a <code>Metric</code> with a specified label.
-     * <p/>
+     * <p>
      * This static method is equivalent to
      * <code>MetricRepository.instance().getMetric(label)</code>
      *
      * @param inLabel String label
-     * @return <code>Metric</code> with the specified label, or <code>null</code
+     * @return <code>Metric</code> with the specified label, or <code>null</code>
      *         if one does not exist.
      */
     public static Metric get(String inLabel) {
@@ -97,7 +97,7 @@ public final class MetricRepository implements Serializable {
 
     /**
      * Places an instance of <code>Metric</code> into the repository.
-     * <p/>
+     * <p>
      * This static method is equivalent to
      * <code>MetricRepository.instance().putMetric(metric)</code>
      *

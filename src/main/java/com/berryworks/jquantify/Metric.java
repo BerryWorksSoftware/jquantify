@@ -24,10 +24,10 @@ import java.io.Serializable;
 
 /**
  * Abstract superclass for <code>EventCounter</code>, <code>SessionCounter</code>, and other metric classes.
- * <p/>
+ * <p>
  * Each <code>Metric</code> is associated with a descriptive label that is
  * used in reporting to suggest what is being counted.
- * <p/>
+ * <p>
  * A <code>Metric</code> views time as a
  * series of non-overlapping time intervals. The duration of an interval is a
  * number of seconds and does not vary for the intervals within a given
@@ -35,7 +35,7 @@ import java.io.Serializable;
  * knowledge of the current interval, as an <code>Interval</code> object, as
  * well as one or more <code>Interval</code>s that have were noted in the
  * history of this metric.
- * <p/>
+ * <p>
  * <b>Choosing the duration of an interval</b>.
  * Each instance of a <code>Metric</code> has a fixed duration for each interval.
  * The choice of duration makes no difference in the actual count of event occurrences.
@@ -145,7 +145,7 @@ public abstract class Metric implements Serializable {
 
     /**
      * Adds a single event.
-     * <p/>
+     * <p>
      * Equivalent to add(1).
      */
     public void add() {
@@ -154,7 +154,7 @@ public abstract class Metric implements Serializable {
 
     /**
      * Adds a number of events.
-     * <p/>
+     * <p>
      * All events are considered to have happened simultaneously.
      *
      * @param count number of events counted by this call

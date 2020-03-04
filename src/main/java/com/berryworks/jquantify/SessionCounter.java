@@ -24,9 +24,9 @@ import java.util.LinkedList;
 /**
  * This class is used to count and observe the frequency, duration, and concurrency
  * of events that have distinct start/stop times.
- * <p/>
+ * <p>
  * <code>SessionCounter</code> events may overlap. In other words, a second event may start before
- * the first one stops. For a given <cdode>SessionCounter</cdode>, its <i>concurrency</i> is the number of events that
+ * the first one stops. For a given <code>SessionCounter</code>, its <i>concurrency</i> is the number of events that
  * have started and not yet stopped.
  */
 public class SessionCounter extends EventCounter {
@@ -188,7 +188,7 @@ public class SessionCounter extends EventCounter {
 
     /**
      * Counts the beginning of a session.
-     * <p/>
+     * <p>
      * The implementation supports adding only one session at a time. Hence, the
      * argument is ignored and treated as 1.
      *

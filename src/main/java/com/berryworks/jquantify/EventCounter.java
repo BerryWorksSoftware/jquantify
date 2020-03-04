@@ -21,7 +21,7 @@ package com.berryworks.jquantify;
 
 /**
  * This class is used to count and observe the frequency of events.
- * <p/>
+ * <p>
  * An <code>EventCounter</code> treats events as instantaneous,
  * happening at a specific point in time and with no observable duration.
  * For observing events that have both frequency and duration, consider
@@ -149,7 +149,7 @@ public class EventCounter extends Metric {
 
     /**
      * Adds a number events.
-     * <p/>
+     * <p>
      * All events are considered to have happened now simultaneously.
      *
      * @param inCount number of events counted by this call

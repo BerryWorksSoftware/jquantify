@@ -24,7 +24,7 @@ import java.io.Serializable;
 /**
  * An object that counts events occurring during a single time slice
  * within the life of a <code>Metric</code> instance.
- * <p/>
+ * <p>
  * The life of a <code>Metric</code> is conceptually a sequence of non-overlapping intervals.
  * Each <code>Interval</code> has a duration that is a whole number of seconds, and all intervals
  * for a given <code>Metric</code> have a uniform duration. Each <code>Interval</code> has a
@@ -57,7 +57,7 @@ public interface Interval extends Serializable {
     /**
      * Returns the computed event rate per second during this
      * <code>Interval</code>.
-     * <p/>
+     * <p>
      * If the current time falls within this interval, consider only the time that has passed.
      * Otherwise, consider the entire duration of the interval.
      *
@@ -82,7 +82,7 @@ public interface Interval extends Serializable {
 
     /**
      * Registers the occurrence of n new events.
-     * <p/>
+     * <p>
      * Intended for internal use only.
      *
      * @param count number of events to be counted
@@ -91,11 +91,13 @@ public interface Interval extends Serializable {
 
     /**
      * Marks the interval as open or closed.
-     * <p/>
+     * <p>
      * Intended for internal use only.
      * A closed interval is one known to be fully in the past.
      * By flagging an interval as closed, we can calculate such things
      * as the event rate without sampling the clock.
+     *
+     * @param closed
      */
     void setClosed(boolean closed);
 

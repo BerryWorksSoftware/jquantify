@@ -75,7 +75,7 @@ public abstract class Format {
     }
 
     public static String asHtmlTable(Metric... metrics) {
-        StringBuffer sb = new StringBuffer("<table>" + NEWLINE);
+        StringBuilder sb = new StringBuilder("<table>" + NEWLINE);
         sb.append("" +
                 "    <col>" + NEWLINE +
                 "    <colgroup span=\"2\"></colgroup>" + NEWLINE +

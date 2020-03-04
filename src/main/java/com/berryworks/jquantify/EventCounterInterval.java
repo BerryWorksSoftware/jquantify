@@ -48,7 +48,7 @@ public class EventCounterInterval implements Interval {
 
     /**
      * Constructs a new <code>EventCounterInterval</code>.
-     * <p/>
+     * <p>
      * This constructor is not public because <code>Interval</code>s are
      * constructed only via <code>Metric</code> according to the Abstract Factory
      * design pattern.
@@ -143,7 +143,7 @@ public class EventCounterInterval implements Interval {
     /**
      * Returns the number of intervals that have elapsed between this
      * <code>Interval</code> and the time specified by the argument.
-     * <p/>
+     * <p>
      * The argument is typically a recently-noted timestamp.
      *
      * @param inTime - reference point in time
