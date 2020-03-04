@@ -121,6 +121,10 @@ public abstract class Format {
     public static String asHtmlTable() {
         List<String> names = new ArrayList<>(MetricRepository.instance().getLabels());
         Collections.sort(names);
-        return asHtmlTable(names.toArray(new Metric[0]));
+        Metric[] metrics = new Metric[names.size()];
+        for (int n = 0; n < names.size(); n++) {
+            metrics[n] = MetricRepository.get(names.get(n));
+        }
+        return asHtmlTable(metrics);
     }
 }

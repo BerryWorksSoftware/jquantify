@@ -1,6 +1,7 @@
 package com.berryworks.jquantify.util;
 
 import com.berryworks.jquantify.EventCounter;
+import com.berryworks.jquantify.MetricRepository;
 import com.berryworks.jquantify.SessionCounter;
 import org.junit.Before;
 import org.junit.Test;
@@ -220,5 +221,14 @@ public class FormatTest {
                 "        <td>0</td>\n" +
                 "    </tr>\n" +
                 "</table>\n", Format.asHtmlTable(a, b));
+    }
+
+    @Test
+    public void canGenerateTableForAllMetrics() {
+        MetricRepository.put(new SessionCounter("Z"));
+        MetricRepository.put(new SessionCounter("Y"));
+        MetricRepository.put(new SessionCounter("X"));
+        String table = Format.asHtmlTable();
+        assertTrue(table.startsWith("<table>"));
     }
 }
