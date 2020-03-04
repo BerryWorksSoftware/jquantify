@@ -243,6 +243,6 @@ public class EventCounter extends Metric {
     }
 
     private boolean isPriorIntervalRelevant() {
-        return (mPriorInterval == null) ? false : mPriorInterval.getStartTime() != mCurrentInterval.getStartTime();
+        return (mPriorInterval != null) && mPriorInterval.getStartTime() != mCurrentInterval.getStartTime();
     }
 }
