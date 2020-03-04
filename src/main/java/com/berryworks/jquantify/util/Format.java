@@ -1,5 +1,5 @@
 /*
- * Copyright 2005-2015 by BerryWorks Software, LLC. All rights reserved.
+ * Copyright 2005-2020 by BerryWorks Software, LLC. All rights reserved.
  *
  *  This file is part of EDIReader. You may obtain a license for its use directly from
  *  BerryWorks Software, and you may also choose to use this software under the terms of the
@@ -22,6 +22,8 @@ package com.berryworks.jquantify.util;
 import com.berryworks.jquantify.*;
 
 public abstract class Format {
+
+    public static final String NEWLINE = System.lineSeparator();
 
     public static String asCSV(EventCounter inEventCounter) {
         StringBuilder sb = new StringBuilder(1000);
@@ -72,4 +74,45 @@ public abstract class Format {
         return beforeTheDecimal + '.' + afterTheDecimal;
     }
 
+    public static String asHtmlTable(Metric... metrics) {
+        StringBuffer sb = new StringBuffer("<table>\n");
+        sb.append("" +
+                "    <col>\n" +
+                "    <colgroup span=\"2\"></colgroup>\n" +
+                "    <colgroup span=\"2\"></colgroup>\n" +
+                "    <tr>\n" +
+                "        <td rowspan=\"2\"></td>\n" +
+                "        <th colspan=\"2\" scope=\"colgroup\">Occurrence</th>\n" +
+                "        <th colspan=\"3\" scope=\"colgroup\">Duration</th>\n" +
+                "        <th colspan=\"3\" scope=\"colgroup\">Concurrency</th>\n" +
+                "    </tr>\n" +
+                "    <tr>\n" +
+                "        <th scope=\"col\">Count</th>\n" +
+                "        <th scope=\"col\">Frequency</th>\n" +
+                "        <th scope=\"col\">Recent</th>\n" +
+                "        <th scope=\"col\">Mean</th>\n" +
+                "        <th scope=\"col\">Peak</th>\n" +
+                "        <th scope=\"col\">Recent</th>\n" +
+                "        <th scope=\"col\">Mean</th>\n" +
+                "        <th scope=\"col\">Peak</th>\n" +
+                "    </tr>\n");
+        for (Metric m : metrics) {
+            if (m instanceof SessionCounter) {
+                SessionCounter s = (SessionCounter) m;
+                sb.append("    <tr>").append(NEWLINE);
+                sb.append("        <th scope=\"row\">").append(s.getLabel()).append("</th>").append(NEWLINE);
+                sb.append("        <td>").append(s.getCount()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(s.getCumulativeFreq()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(s.getSessionTimeMean()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(s.getConcurrency()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(s.getCount()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(s.getPeakConcurrencyInterval().getConcurrency()).append("</td>").append(NEWLINE);
+                sb.append("    </tr>").append(NEWLINE);
+            }
+        }
+        sb.append("</table>\n");
+        return sb.toString();
+    }
 }

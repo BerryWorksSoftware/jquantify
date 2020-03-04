@@ -174,4 +174,54 @@ public class FormatTest {
         assertEquals("100.0", Format.toDecimalFormat(99.99999));
     }
 
+    @Test
+    public void htmlTableBasics() {
+        SessionCounter a = new SessionCounter("A");
+        SessionCounter b = new SessionCounter("B");
+        EventCounter c = new EventCounter("C");
+        assertEquals("" +
+                "<table>\n" +
+                "    <col>\n" +
+                "    <colgroup span=\"2\"></colgroup>\n" +
+                "    <colgroup span=\"2\"></colgroup>\n" +
+                "    <tr>\n" +
+                "        <td rowspan=\"2\"></td>\n" +
+                "        <th colspan=\"2\" scope=\"colgroup\">Occurrence</th>\n" +
+                "        <th colspan=\"3\" scope=\"colgroup\">Duration</th>\n" +
+                "        <th colspan=\"3\" scope=\"colgroup\">Concurrency</th>\n" +
+                "    </tr>\n" +
+                "    <tr>\n" +
+                "        <th scope=\"col\">Count</th>\n" +
+                "        <th scope=\"col\">Frequency</th>\n" +
+                "        <th scope=\"col\">Recent</th>\n" +
+                "        <th scope=\"col\">Mean</th>\n" +
+                "        <th scope=\"col\">Peak</th>\n" +
+                "        <th scope=\"col\">Recent</th>\n" +
+                "        <th scope=\"col\">Mean</th>\n" +
+                "        <th scope=\"col\">Peak</th>\n" +
+                "    </tr>\n" +
+                "    <tr>\n" +
+                "        <th scope=\"row\">A</th>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0.0</td>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0.0</td>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0</td>\n" +
+                "    </tr>\n" +
+                "    <tr>\n" +
+                "        <th scope=\"row\">B</th>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0.0</td>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0.0</td>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0</td>\n" +
+                "        <td>0</td>\n" +
+                "    </tr>\n" +
+                "</table>\n", Format.asHtmlTable(a, b));
+    }
 }
