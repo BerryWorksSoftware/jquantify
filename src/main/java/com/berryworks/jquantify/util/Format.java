@@ -83,16 +83,17 @@ public abstract class Format {
         sb.append("" +
                 "    <col>" + NEWLINE +
                 "    <colgroup span=\"2\"></colgroup>" + NEWLINE +
-                "    <colgroup span=\"2\"></colgroup>" + NEWLINE +
                 "    <tr>" + NEWLINE +
                 "        <td rowspan=\"2\"></td>" + NEWLINE +
-                "        <th colspan=\"2\" scope=\"colgroup\">Occurrence</th>" + NEWLINE +
+                "        <th colspan=\"1\" scope=\"colgroup\"></th>" + NEWLINE +
+                "        <th colspan=\"2\" scope=\"colgroup\">Frequency</th>" + NEWLINE +
                 "        <th colspan=\"3\" scope=\"colgroup\">Duration</th>" + NEWLINE +
                 "        <th colspan=\"2\" scope=\"colgroup\">Concurrency</th>" + NEWLINE +
                 "    </tr>" + NEWLINE +
                 "    <tr>" + NEWLINE +
                 "        <th scope=\"col\">Count</th>" + NEWLINE +
-                "        <th scope=\"col\">Frequency</th>" + NEWLINE +
+                "        <th scope=\"col\">Recent</th>" + NEWLINE +
+                "        <th scope=\"col\">Peak</th>" + NEWLINE +
                 "        <th scope=\"col\">Recent</th>" + NEWLINE +
                 "        <th scope=\"col\">Mean</th>" + NEWLINE +
                 "        <th scope=\"col\">Peak</th>" + NEWLINE +
@@ -106,6 +107,7 @@ public abstract class Format {
                 sb.append("        <th scope=\"row\">").append(s.getLabel()).append("</th>").append(NEWLINE);
                 sb.append("        <td>").append(s.getCount()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getCumulativeFreq()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(s.getPeakEventsInterval().getEventRatePerSecond()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getSessionTimeMean()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
