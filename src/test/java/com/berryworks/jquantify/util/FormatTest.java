@@ -204,10 +204,10 @@ public class FormatTest {
                 "    <tr>\n" +
                 "        <th scope=\"row\">A</th>\n" +
                 "        <td>0</td>\n" +
-                "        <td>0.0</td>\n" +
-                "        <td>0.0</td>\n" +
+                "        <td>0.00</td>\n" +
+                "        <td>0.00</td>\n" +
                 "        <td>0</td>\n" +
-                "        <td>0.0</td>\n" +
+                "        <td>0.00</td>\n" +
                 "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
@@ -215,10 +215,10 @@ public class FormatTest {
                 "    <tr>\n" +
                 "        <th scope=\"row\">B</th>\n" +
                 "        <td>0</td>\n" +
-                "        <td>0.0</td>\n" +
-                "        <td>0.0</td>\n" +
+                "        <td>0.00</td>\n" +
+                "        <td>0.00</td>\n" +
                 "        <td>0</td>\n" +
-                "        <td>0.0</td>\n" +
+                "        <td>0.00</td>\n" +
                 "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
                 "        <td>0</td>\n" +
@@ -228,9 +228,12 @@ public class FormatTest {
 
     @Test
     public void canGenerateTableForAllMetrics() {
-        MetricRepository.put(new SessionCounter("Z"));
+        SessionCounter z = new SessionCounter("Z");
+        MetricRepository.put(z);
         MetricRepository.put(new SessionCounter("Y"));
         MetricRepository.put(new SessionCounter("X"));
+        z.start();z.start();z.start();
+        z.stop();z.stop();z.stop();
         String table = Format.asHtmlTable();
         assertTrue(table.startsWith("<table>"));
     }

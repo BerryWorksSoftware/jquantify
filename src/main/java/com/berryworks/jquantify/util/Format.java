@@ -21,6 +21,7 @@ package com.berryworks.jquantify.util;
 
 import com.berryworks.jquantify.*;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -100,16 +101,17 @@ public abstract class Format {
                 "        <th scope=\"col\">Recent</th>" + NEWLINE +
                 "        <th scope=\"col\">Peak</th>" + NEWLINE +
                 "    </tr>" + NEWLINE);
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
         for (Metric m : metrics) {
             if (m instanceof SessionCounter) {
                 SessionCounter s = (SessionCounter) m;
                 sb.append("    <tr>").append(NEWLINE);
                 sb.append("        <th scope=\"row\">").append(s.getLabel()).append("</th>").append(NEWLINE);
                 sb.append("        <td>").append(s.getCount()).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(s.getCumulativeFreq()).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(s.getPeakEventsInterval().getEventRatePerSecond()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(decimalFormat.format(s.getCumulativeFreq())).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(decimalFormat.format(s.getPeakEventsInterval().getEventRatePerSecond())).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(s.getSessionTimeMean()).append("</td>").append(NEWLINE);
+                sb.append("        <td>").append(decimalFormat.format(s.getSessionTimeMean())).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getConcurrency()).append("</td>").append(NEWLINE);
                 sb.append("        <td>").append(s.getPeakConcurrencyInterval().getConcurrency()).append("</td>").append(NEWLINE);
