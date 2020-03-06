@@ -80,15 +80,15 @@ public abstract class Format {
     }
 
     public static String asHtmlTable(Metric... metrics) {
-        StringBuilder sb = new StringBuilder("<table>" + NEWLINE);
+        StringBuilder sb = new StringBuilder("<table bgcolor=\"#fffae6\">" + NEWLINE);
         sb.append("" +
                 "    <col>" + NEWLINE +
                 "    <colgroup span=\"2\"></colgroup>" + NEWLINE +
                 "    <tr>" + NEWLINE +
                 "        <td rowspan=\"2\"></td>" + NEWLINE +
                 "        <th colspan=\"1\" scope=\"colgroup\"></th>" + NEWLINE +
-                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency</th>" + NEWLINE +
-                "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#ffedd6\">Duration</th>" + NEWLINE +
+                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency (/min)</th>" + NEWLINE +
+                "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#ffedd6\">Duration (ms)</th>" + NEWLINE +
                 "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dcffee\">Concurrency</th>" + NEWLINE +
                 "    </tr>" + NEWLINE +
                 "    <tr>" + NEWLINE +
@@ -108,10 +108,10 @@ public abstract class Format {
                 sb.append("    <tr>").append(NEWLINE);
                 sb.append("        <th scope=\"row\" align=\"left\">").append(s.getLabel()).append("</th>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#fffee6\">").append(s.getCount()).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(s.getCumulativeFreq())).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(s.getPeakEventsInterval().getEventRatePerSecond())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(60.0 * s.getCurrentFreq())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(60.0 * s.getPeakEventsInterval().getEventRatePerSecond())).append("</td>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append(decimalFormat.format(s.getSessionTimeMean())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append((long) s.getSessionTimeMean()).append("</td>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#dcffee\">").append(s.getConcurrency()).append("</td>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#dcffee\">").append(s.getPeakConcurrencyInterval().getConcurrency()).append("</td>").append(NEWLINE);

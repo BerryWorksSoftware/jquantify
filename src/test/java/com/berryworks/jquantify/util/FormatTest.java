@@ -182,14 +182,14 @@ public class FormatTest {
         EventCounter c = new EventCounter("C");
         String actual = Format.asHtmlTable(a, b);
         assertEquals("" +
-                "<table>\n" +
+                "<table bgcolor=\"#fffae6\">\n" +
                 "    <col>\n" +
                 "    <colgroup span=\"2\"></colgroup>\n" +
                 "    <tr>\n" +
                 "        <td rowspan=\"2\"></td>\n" +
                 "        <th colspan=\"1\" scope=\"colgroup\"></th>\n" +
-                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency</th>\n" +
-                "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#ffedd6\">Duration</th>\n" +
+                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency (/min)</th>\n" +
+                "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#ffedd6\">Duration (ms)</th>\n" +
                 "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dcffee\">Concurrency</th>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
@@ -208,7 +208,7 @@ public class FormatTest {
                 "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
-                "        <td align=\"right\" bgcolor=\"#ffedd6\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dcffee\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dcffee\">0</td>\n" +
@@ -219,7 +219,7 @@ public class FormatTest {
                 "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
-                "        <td align=\"right\" bgcolor=\"#ffedd6\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dcffee\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dcffee\">0</td>\n" +
