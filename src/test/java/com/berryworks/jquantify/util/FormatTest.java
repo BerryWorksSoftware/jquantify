@@ -180,6 +180,7 @@ public class FormatTest {
         SessionCounter a = new SessionCounter("A");
         SessionCounter b = new SessionCounter("B");
         EventCounter c = new EventCounter("C");
+        String actual = Format.asHtmlTable(a, b);
         assertEquals("" +
                 "<table>\n" +
                 "    <col>\n" +
@@ -187,43 +188,43 @@ public class FormatTest {
                 "    <tr>\n" +
                 "        <td rowspan=\"2\"></td>\n" +
                 "        <th colspan=\"1\" scope=\"colgroup\"></th>\n" +
-                "        <th colspan=\"2\" scope=\"colgroup\">Frequency</th>\n" +
-                "        <th colspan=\"3\" scope=\"colgroup\">Duration</th>\n" +
-                "        <th colspan=\"2\" scope=\"colgroup\">Concurrency</th>\n" +
+                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency</th>\n" +
+                "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#ffedd6\">Duration</th>\n" +
+                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dcffee\">Concurrency</th>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
-                "        <th scope=\"col\">Count</th>\n" +
-                "        <th scope=\"col\">Recent</th>\n" +
-                "        <th scope=\"col\">Peak</th>\n" +
-                "        <th scope=\"col\">Recent</th>\n" +
-                "        <th scope=\"col\">Mean</th>\n" +
-                "        <th scope=\"col\">Peak</th>\n" +
-                "        <th scope=\"col\">Recent</th>\n" +
-                "        <th scope=\"col\">Peak</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#fffee6\">Count</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#dafffe\">Recent</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#dafffe\">Peak</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#ffedd6\">Recent</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#ffedd6\">Mean</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#ffedd6\">Peak</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#dcffee\">Recent</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#dcffee\">Peak</th>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
                 "        <th scope=\"row\" align=\"left\">A</th>\n" +
-                "        <td align=\"right\">0</td>\n" +
-                "        <td align=\"right\">0.00</td>\n" +
-                "        <td align=\"right\">0.00</td>\n" +
-                "        <td align=\"right\">0</td>\n" +
-                "        <td align=\"right\">0.00</td>\n" +
-                "        <td align=\"right\">0</td>\n" +
-                "        <td align=\"right\">0</td>\n" +
-                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#fffee6\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#ffedd6\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dcffee\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dcffee\">0</td>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
                 "        <th scope=\"row\" align=\"left\">B</th>\n" +
-                "        <td align=\"right\">0</td>\n" +
-                "        <td align=\"right\">0.00</td>\n" +
-                "        <td align=\"right\">0.00</td>\n" +
-                "        <td align=\"right\">0</td>\n" +
-                "        <td align=\"right\">0.00</td>\n" +
-                "        <td align=\"right\">0</td>\n" +
-                "        <td align=\"right\">0</td>\n" +
-                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#fffee6\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#ffedd6\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dcffee\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dcffee\">0</td>\n" +
                 "    </tr>\n" +
-                "</table>\n", Format.asHtmlTable(a, b));
+                "</table>\n", actual);
     }
 
     @Test

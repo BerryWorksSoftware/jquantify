@@ -87,19 +87,19 @@ public abstract class Format {
                 "    <tr>" + NEWLINE +
                 "        <td rowspan=\"2\"></td>" + NEWLINE +
                 "        <th colspan=\"1\" scope=\"colgroup\"></th>" + NEWLINE +
-                "        <th colspan=\"2\" scope=\"colgroup\">Frequency</th>" + NEWLINE +
-                "        <th colspan=\"3\" scope=\"colgroup\">Duration</th>" + NEWLINE +
-                "        <th colspan=\"2\" scope=\"colgroup\">Concurrency</th>" + NEWLINE +
+                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency</th>" + NEWLINE +
+                "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#ffedd6\">Duration</th>" + NEWLINE +
+                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dcffee\">Concurrency</th>" + NEWLINE +
                 "    </tr>" + NEWLINE +
                 "    <tr>" + NEWLINE +
-                "        <th scope=\"col\">Count</th>" + NEWLINE +
-                "        <th scope=\"col\">Recent</th>" + NEWLINE +
-                "        <th scope=\"col\">Peak</th>" + NEWLINE +
-                "        <th scope=\"col\">Recent</th>" + NEWLINE +
-                "        <th scope=\"col\">Mean</th>" + NEWLINE +
-                "        <th scope=\"col\">Peak</th>" + NEWLINE +
-                "        <th scope=\"col\">Recent</th>" + NEWLINE +
-                "        <th scope=\"col\">Peak</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#fffee6\">Count</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#dafffe\">Recent</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#dafffe\">Peak</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#ffedd6\">Recent</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#ffedd6\">Mean</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#ffedd6\">Peak</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#dcffee\">Recent</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#dcffee\">Peak</th>" + NEWLINE +
                 "    </tr>" + NEWLINE);
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
         for (Metric m : metrics) {
@@ -107,14 +107,14 @@ public abstract class Format {
                 SessionCounter s = (SessionCounter) m;
                 sb.append("    <tr>").append(NEWLINE);
                 sb.append("        <th scope=\"row\" align=\"left\">").append(s.getLabel()).append("</th>").append(NEWLINE);
-                sb.append("        <td align=\"right\">").append(s.getCount()).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\">").append(decimalFormat.format(s.getCumulativeFreq())).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\">").append(decimalFormat.format(s.getPeakEventsInterval().getEventRatePerSecond())).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\">").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\">").append(decimalFormat.format(s.getSessionTimeMean())).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\">").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\">").append(s.getConcurrency()).append("</td>").append(NEWLINE);
-                sb.append("        <td align=\"right\">").append(s.getPeakConcurrencyInterval().getConcurrency()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#fffee6\">").append(s.getCount()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(s.getCumulativeFreq())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(s.getPeakEventsInterval().getEventRatePerSecond())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append(decimalFormat.format(s.getSessionTimeMean())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#dcffee\">").append(s.getConcurrency()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#dcffee\">").append(s.getPeakConcurrencyInterval().getConcurrency()).append("</td>").append(NEWLINE);
                 sb.append("    </tr>").append(NEWLINE);
             }
         }
