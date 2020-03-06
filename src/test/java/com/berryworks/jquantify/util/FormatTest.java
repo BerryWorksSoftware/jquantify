@@ -202,26 +202,26 @@ public class FormatTest {
                 "        <th scope=\"col\">Peak</th>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
-                "        <th scope=\"row\">A</th>\n" +
-                "        <td>0</td>\n" +
-                "        <td>0.00</td>\n" +
-                "        <td>0.00</td>\n" +
-                "        <td>0</td>\n" +
-                "        <td>0.00</td>\n" +
-                "        <td>0</td>\n" +
-                "        <td>0</td>\n" +
-                "        <td>0</td>\n" +
+                "        <th scope=\"row\" align=\"left\">A</th>\n" +
+                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\">0.00</td>\n" +
+                "        <td align=\"right\">0.00</td>\n" +
+                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\">0.00</td>\n" +
+                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\">0</td>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
-                "        <th scope=\"row\">B</th>\n" +
-                "        <td>0</td>\n" +
-                "        <td>0.00</td>\n" +
-                "        <td>0.00</td>\n" +
-                "        <td>0</td>\n" +
-                "        <td>0.00</td>\n" +
-                "        <td>0</td>\n" +
-                "        <td>0</td>\n" +
-                "        <td>0</td>\n" +
+                "        <th scope=\"row\" align=\"left\">B</th>\n" +
+                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\">0.00</td>\n" +
+                "        <td align=\"right\">0.00</td>\n" +
+                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\">0.00</td>\n" +
+                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\">0</td>\n" +
+                "        <td align=\"right\">0</td>\n" +
                 "    </tr>\n" +
                 "</table>\n", Format.asHtmlTable(a, b));
     }

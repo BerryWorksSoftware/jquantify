@@ -106,15 +106,15 @@ public abstract class Format {
             if (m instanceof SessionCounter) {
                 SessionCounter s = (SessionCounter) m;
                 sb.append("    <tr>").append(NEWLINE);
-                sb.append("        <th scope=\"row\">").append(s.getLabel()).append("</th>").append(NEWLINE);
-                sb.append("        <td>").append(s.getCount()).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(decimalFormat.format(s.getCumulativeFreq())).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(decimalFormat.format(s.getPeakEventsInterval().getEventRatePerSecond())).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(decimalFormat.format(s.getSessionTimeMean())).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(s.getConcurrency()).append("</td>").append(NEWLINE);
-                sb.append("        <td>").append(s.getPeakConcurrencyInterval().getConcurrency()).append("</td>").append(NEWLINE);
+                sb.append("        <th scope=\"row\" align=\"left\">").append(s.getLabel()).append("</th>").append(NEWLINE);
+                sb.append("        <td align=\"right\">").append(s.getCount()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\">").append(decimalFormat.format(s.getCumulativeFreq())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\">").append(decimalFormat.format(s.getPeakEventsInterval().getEventRatePerSecond())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\">").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\">").append(decimalFormat.format(s.getSessionTimeMean())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\">").append(s.getMaximumSessionTime()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\">").append(s.getConcurrency()).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\">").append(s.getPeakConcurrencyInterval().getConcurrency()).append("</td>").append(NEWLINE);
                 sb.append("    </tr>").append(NEWLINE);
             }
         }
