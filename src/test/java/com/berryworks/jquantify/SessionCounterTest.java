@@ -34,6 +34,14 @@ public class SessionCounterTest {
     }
 
     @Test
+    public void testAutoCloseable() {
+        try (SessionCounter start = mCounter.autoCloseableStart()) {
+            assertEquals(1, start.getConcurrency());
+        }
+        assertEquals(0, mCounter.getConcurrency());
+    }
+
+    @Test
     public void testReset() {
         mCounter.start();
         assertEquals(1, mCounter.getConcurrency());

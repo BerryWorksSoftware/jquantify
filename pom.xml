@@ -6,7 +6,7 @@
 
     <groupId>com.berryworks</groupId>
     <artifactId>jquantify</artifactId>
-    <version>4.1.8</version>
+    <version>4.2.0</version>
 
     <packaging>jar</packaging>
     <name>JQuantify</name>
@@ -50,8 +50,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>

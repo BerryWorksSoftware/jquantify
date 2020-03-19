@@ -87,13 +87,14 @@ public abstract class Format {
                 "    <tr>" + NEWLINE +
                 "        <td rowspan=\"2\"></td>" + NEWLINE +
                 "        <th colspan=\"1\" scope=\"colgroup\"></th>" + NEWLINE +
-                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency (/min)</th>" + NEWLINE +
+                "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency (/min)</th>" + NEWLINE +
                 "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#ffedd6\">Duration (ms)</th>" + NEWLINE +
                 "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dcffee\">Concurrency</th>" + NEWLINE +
                 "    </tr>" + NEWLINE +
                 "    <tr>" + NEWLINE +
                 "        <th scope=\"col\" bgcolor=\"#fffee6\">Count</th>" + NEWLINE +
                 "        <th scope=\"col\" bgcolor=\"#dafffe\">Recent</th>" + NEWLINE +
+                "        <th scope=\"col\" bgcolor=\"#dafffe\">Mean</th>" + NEWLINE +
                 "        <th scope=\"col\" bgcolor=\"#dafffe\">Peak</th>" + NEWLINE +
                 "        <th scope=\"col\" bgcolor=\"#ffedd6\">Recent</th>" + NEWLINE +
                 "        <th scope=\"col\" bgcolor=\"#ffedd6\">Mean</th>" + NEWLINE +
@@ -109,6 +110,7 @@ public abstract class Format {
                 sb.append("        <th scope=\"row\" align=\"left\">").append(s.getLabel()).append("</th>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#fffee6\">").append(s.getCount()).append("</td>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(60.0 * s.getCurrentFreq())).append("</td>").append(NEWLINE);
+                sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(60.0 * s.getCumulativeFreq())).append("</td>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#dafffe\">").append(decimalFormat.format(60.0 * s.getPeakEventsInterval().getEventRatePerSecond())).append("</td>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append(s.getRecentSessionTime()).append("</td>").append(NEWLINE);
                 sb.append("        <td align=\"right\" bgcolor=\"#ffedd6\">").append((long) s.getSessionTimeMean()).append("</td>").append(NEWLINE);

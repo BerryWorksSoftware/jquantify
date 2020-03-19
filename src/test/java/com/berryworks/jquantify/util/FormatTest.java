@@ -188,13 +188,14 @@ public class FormatTest {
                 "    <tr>\n" +
                 "        <td rowspan=\"2\"></td>\n" +
                 "        <th colspan=\"1\" scope=\"colgroup\"></th>\n" +
-                "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency (/min)</th>\n" +
+                "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#dafffe\">Frequency (/min)</th>\n" +
                 "        <th colspan=\"3\" scope=\"colgroup\" bgcolor=\"#ffedd6\">Duration (ms)</th>\n" +
                 "        <th colspan=\"2\" scope=\"colgroup\" bgcolor=\"#dcffee\">Concurrency</th>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
                 "        <th scope=\"col\" bgcolor=\"#fffee6\">Count</th>\n" +
                 "        <th scope=\"col\" bgcolor=\"#dafffe\">Recent</th>\n" +
+                "        <th scope=\"col\" bgcolor=\"#dafffe\">Mean</th>\n" +
                 "        <th scope=\"col\" bgcolor=\"#dafffe\">Peak</th>\n" +
                 "        <th scope=\"col\" bgcolor=\"#ffedd6\">Recent</th>\n" +
                 "        <th scope=\"col\" bgcolor=\"#ffedd6\">Mean</th>\n" +
@@ -207,6 +208,7 @@ public class FormatTest {
                 "        <td align=\"right\" bgcolor=\"#fffee6\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
@@ -216,6 +218,7 @@ public class FormatTest {
                 "    <tr>\n" +
                 "        <th scope=\"row\" align=\"left\">B</th>\n" +
                 "        <td align=\"right\" bgcolor=\"#fffee6\">0</td>\n" +
+                "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#dafffe\">0.00</td>\n" +
                 "        <td align=\"right\" bgcolor=\"#ffedd6\">0</td>\n" +
@@ -236,6 +239,6 @@ public class FormatTest {
         z.start();z.start();z.start();
         z.stop();z.stop();z.stop();
         String table = Format.asHtmlTable();
-        assertTrue(table.startsWith("<table>"));
+        assertTrue(table.startsWith("<table"));
     }
 }

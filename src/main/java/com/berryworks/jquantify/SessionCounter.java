@@ -29,7 +29,7 @@ import java.util.LinkedList;
  * the first one stops. For a given <code>SessionCounter</code>, its <i>concurrency</i> is the number of events that
  * have started and not yet stopped.
  */
-public class SessionCounter extends EventCounter {
+public class SessionCounter extends EventCounter implements AutoCloseable {
     private static final long serialVersionUID = 1L;
     // queue of session start times for sessions that have started but not yet stopped.
     private LinkedList<Long> startTimes;
@@ -210,6 +210,11 @@ public class SessionCounter extends EventCounter {
         startTimes.add(mNow);
     }
 
+    public SessionCounter autoCloseableStart() {
+        start();
+        return this;
+    }
+
     private void checkPeakConcurrency() {
         SessionCounterInterval currentInterval = (SessionCounterInterval) mCurrentInterval;
         if (currentInterval.getPeakConcurrency() > peakConcurrency.getPeakConcurrency()) {
@@ -303,4 +308,8 @@ public class SessionCounter extends EventCounter {
         super.normalizePrior_ScenarioB(nEmptyIntervals);
     }
 
+    @Override
+    public void close() {
+        stop();
+    }
 }
