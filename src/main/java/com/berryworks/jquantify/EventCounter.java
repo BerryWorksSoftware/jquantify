@@ -1,5 +1,5 @@
 /*
- * Copyright 2005-2015 by BerryWorks Software, LLC. All rights reserved.
+ * Copyright 2005-2022 by BerryWorks Software, LLC. All rights reserved.
  *
  *  This file is part of EDIReader. You may obtain a license for its use directly from
  *  BerryWorks Software, and you may also choose to use this software under the terms of the
@@ -237,9 +237,9 @@ public class EventCounter extends Metric {
     }
 
     protected void createIntervals() {
-        mCurrentInterval = new EventCounterInterval(intervalSeconds * 1000, startTime);
-        mPriorInterval = new EventCounterInterval(intervalSeconds * 1000, startTime);
-        mPeakEvents = new EventCounterInterval(intervalSeconds * 1000, startTime);
+        mCurrentInterval = new EventCounterInterval(intervalSeconds * 1000L, startTime);
+        mPriorInterval = new EventCounterInterval(intervalSeconds * 1000L, startTime);
+        mPeakEvents = new EventCounterInterval(intervalSeconds * 1000L, startTime);
     }
 
     private boolean isPriorIntervalRelevant() {

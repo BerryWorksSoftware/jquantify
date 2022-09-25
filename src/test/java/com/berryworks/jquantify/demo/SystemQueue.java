@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SystemQueue {
 
-    private final LinkedBlockingQueue<Customer> queue = new LinkedBlockingQueue<Customer>();
+    private final LinkedBlockingQueue<Customer> queue = new LinkedBlockingQueue<>();
 
     public void arrive(Customer customer) {
         queue.add(customer);

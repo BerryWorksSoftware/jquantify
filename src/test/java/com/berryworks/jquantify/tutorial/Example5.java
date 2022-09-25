@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Example5 extends Example {
 
-    private SessionCounter signonCounter = new SessionCounter("signon");
+    private final SessionCounter signonCounter = new SessionCounter("signon");
 
     public static void main(String[] args) {
         runSimulation(new Example5());

@@ -26,7 +26,7 @@ public class FormatTest {
         mSessionCounter.start();
         String text = Format.asCSV(mSessionCounter);
 
-        String fields[] = text.split(",");
+        String[] fields = text.split(",");
         assertEquals(15, fields.length);
         assertEquals("testCounter", fields[0]);
 
@@ -37,13 +37,13 @@ public class FormatTest {
         assertEquals("2", count);
 
         String overallFreq = fields[3].trim();
-        assertTrue(Float.valueOf(overallFreq) >= 0.0);
+        assertTrue(Float.parseFloat(overallFreq) >= 0.0);
 
         String recentFreq = fields[4].trim();
-        assertEquals(Float.valueOf(recentFreq), mSessionCounter.getCurrentFreq(), 2000.0);
+        assertEquals(Float.parseFloat(recentFreq), mSessionCounter.getCurrentFreq(), 2000.0);
 
         String peakFreq = fields[5].trim();
-        assertEquals(Float.valueOf(peakFreq),
+        assertEquals(Float.parseFloat(peakFreq),
                 mSessionCounter.getPeakEventsInterval().getEventRatePerSecond(), 1.0);
 
         String peakFreqAt = fields[6].trim();
@@ -64,7 +64,7 @@ public class FormatTest {
 //        assertEquals(Long.valueOf(sessionTime).longValue(), mSessionCounter.getSessionTime());
 
         String sessionAvg = fields[11].trim();
-        assertEquals(Float.valueOf(sessionAvg).floatValue(), mSessionCounter.getSessionTimeMean(), 0.01);
+        assertEquals(Float.valueOf(sessionAvg), mSessionCounter.getSessionTimeMean(), 0.01);
 
         String sessionMax = fields[12].trim();
         assertEquals(Long.valueOf(sessionMax).longValue(), mSessionCounter.getMaximumSessionTime());
@@ -81,7 +81,7 @@ public class FormatTest {
     @Test
     public void testEventCounterToCSV() throws InterruptedException {
         String text;
-        String fields[];
+        String[] fields;
 
         mEventCounter = new EventCounter("testCounter");
 
@@ -114,15 +114,15 @@ public class FormatTest {
         assertEquals("701", count);
 
         String overallFreq = fields[3].trim();
-        assertEquals(Float.valueOf(overallFreq), mEventCounter.getCumulativeFreq(), 1.0);
+        assertEquals(Float.parseFloat(overallFreq), mEventCounter.getCumulativeFreq(), 1.0);
         assertTrue(overallFreq.startsWith("6"));
 
         String recentFreq = fields[4].trim();
-        assertEquals(Float.valueOf(recentFreq), mEventCounter.getCurrentFreq(), 1.0);
+        assertEquals(Float.parseFloat(recentFreq), mEventCounter.getCurrentFreq(), 1.0);
         assertTrue(recentFreq.startsWith("6"));
 
         String peakFreq = fields[5].trim();
-        assertEquals(Float.valueOf(peakFreq),
+        assertEquals(Float.parseFloat(peakFreq),
                 mEventCounter.getPeakEventsInterval().getEventRatePerSecond(), 1.0);
 
         String peakFreqAt = fields[6].trim();

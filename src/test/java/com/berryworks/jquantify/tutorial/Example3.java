@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Example3 extends Example {
 
-    private EventCounter signonCounter = new EventCounter("signon");
+    private final EventCounter signonCounter = new EventCounter("signon");
 
     public static void main(String[] args) {
         runSimulation(new Example3());

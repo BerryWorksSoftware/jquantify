@@ -42,7 +42,7 @@ public class MetricTest {
         assertEquals(1, totalIntervals);
     }
 
-    class MyMetricType extends Metric {
+    static class MyMetricType extends Metric {
 
         public MyMetricType(String inString) {
             super(inString);

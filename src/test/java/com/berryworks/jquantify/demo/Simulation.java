@@ -13,7 +13,7 @@ public class Simulation implements Runnable {
     private static final int CUSTOMERS = 1000;
     private static final Random random = new Random();
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         new Simulation().run();
     }
 

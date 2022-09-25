@@ -1,5 +1,5 @@
 /*
- * Copyright 2005-2015 by BerryWorks Software, LLC. All rights reserved.
+ * Copyright 2005-2022 by BerryWorks Software, LLC. All rights reserved.
  *
  *  This file is part of EDIReader. You may obtain a license for its use directly from
  *  BerryWorks Software, and you may also choose to use this software under the terms of the
@@ -264,10 +264,10 @@ public class SessionCounter extends EventCounter implements AutoCloseable {
 
     @Override
     protected void createIntervals() {
-        mPeakEvents = new EventCounterInterval(intervalSeconds * 1000, startTime);
-        mCurrentInterval = new SessionCounterInterval(intervalSeconds * 1000, startTime);
-        mPriorInterval = new SessionCounterInterval(intervalSeconds * 1000, startTime);
-        peakConcurrency = new SessionCounterInterval(intervalSeconds * 1000, startTime);
+        mPeakEvents = new EventCounterInterval(intervalSeconds * 1000L, startTime);
+        mCurrentInterval = new SessionCounterInterval(intervalSeconds * 1000L, startTime);
+        mPriorInterval = new SessionCounterInterval(intervalSeconds * 1000L, startTime);
+        peakConcurrency = new SessionCounterInterval(intervalSeconds * 1000L, startTime);
     }
 
     @Override

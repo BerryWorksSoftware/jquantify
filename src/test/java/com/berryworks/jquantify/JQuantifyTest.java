@@ -95,7 +95,7 @@ public class JQuantifyTest {
     public void thatMultiThreadedCountingWorks() throws InterruptedException {
         sc = SessionCounter.getSessionCounter("sc7");
 
-        List<Thread> threads = new ArrayList<Thread>();
+        List<Thread> threads = new ArrayList<>();
         int n = 15;
 
         // Start n threads, each one counting on the same session counter.
