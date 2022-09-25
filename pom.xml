@@ -23,15 +23,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.plugin.version>3.2</maven.compiler.plugin.version>
-        <maven.jar.plugin.version>2.5</maven.jar.plugin.version>
-        <maven.release.plugin.version>2.5.1</maven.release.plugin.version>
-        <maven.javadoc.plugin.version>2.10.1</maven.javadoc.plugin.version>
-        <maven.source.plugin.version>2.4</maven.source.plugin.version>
-        <maven.surefire.plugin.version>2.12</maven.surefire.plugin.version>
-        <maven.surefire.report.plugin.version>2.18.1</maven.surefire.report.plugin.version>
-        <maven.project.info.reports.plugin.version>2.8</maven.project.info.reports.plugin.version>
-        <junit.version>4.12</junit.version>
+        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+        <maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>
+        <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+        <maven.javadoc.plugin.version>3.4.1</maven.javadoc.plugin.version>
+        <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+        <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+        <maven.surefire.report.plugin.version>2.22.2</maven.surefire.report.plugin.version>
+        <junit.version>4.13.2</junit.version>
     </properties>
 
     <dependencies>
