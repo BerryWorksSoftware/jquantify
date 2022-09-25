@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class SessionCounterTest {
     public static final double DELTA = 0.0001;
-    public static final int BIG_DELTA = 10;
+    public static final int BIG_DELTA = 15;
     SessionCounter mCounter;
 
     @Before
