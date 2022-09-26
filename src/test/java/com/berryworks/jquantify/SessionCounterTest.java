@@ -207,7 +207,7 @@ public class SessionCounterTest {
         // We have 2 completed sessions, one of duration 40 and the other of duration 50
         assertEquals(50, mCounter.getMaximumSessionTime(), BIG_DELTA);
         assertEquals(90, mCounter.getSessionTime(), 2 * BIG_DELTA);
-        assertEquals((40 + 50) / 2.0, mCounter.getSessionTimeMean(), 10.00);
+        assertEquals((40 + 50) / 2.0, mCounter.getSessionTimeMean(), BIG_DELTA);
 
         Thread.sleep(10);
         // time is now +70
